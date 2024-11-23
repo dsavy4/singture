@@ -1,0 +1,99 @@
+/* orders-details.css */
+
+/* Container for the order details page */
+.order-details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+.order-details-container h2 {
+    font-size: 28px;
+    color: #0178BA;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* General Order Info */
+.order-details-info p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Role-specific details */
+.order-details-buyer-details,
+.order-details-singer-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-buyer-details h3,
+.order-details-singer-details h3 {
+    font-size: 20px;
+    color: #0178BA;
+    margin-bottom: 15px;
+}
+
+.order-details-buyer-details p,
+.order-details-singer-details p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Action Buttons */
+.order-details-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.order-details-ok-button {
+    padding: 12px 24px;
+    background-color: #0178BA;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.order-details-ok-button:hover {
+    background-color: #0056b3;
+}
+
+/* Loading and Error States */
+.order-details-loading,
+.order-details-error {
+    text-align: center;
+    font-size: 18px;
+    color: #0178BA;
+    margin-top: 20px;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .order-details-container {
+        padding: 15px;
+    }
+
+    .order-details-info p,
+    .order-details-buyer-details p,
+    .order-details-singer-details p {
+        font-size: 14px;
+    }
+
+    .order-details-ok-button {
+        width: 100%;
+        padding: 12px 0;
+    }
+}

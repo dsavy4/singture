@@ -1,0 +1,241 @@
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 64px;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo and Slogan Container */
+.header-logo-slogan-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+/* Hamburger Menu for Mobile View */
+.header-hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.header-hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #0178BA;
+    border-radius: 5px;
+}
+
+/* Logo Styling */
+.header-logo-image {
+    height: 40px;
+    width: auto;
+}
+
+.header-slogan {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    color: #0178BA;
+    white-space: nowrap;
+}
+
+/* Centered nav-links */
+.header-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Updated .header-nav-link for a sleek style */
+.header-nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #0178BA;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.header-nav-link:hover {
+    background-color: #eaf6ff; /* Light blue background on hover */
+    color: #005f8f; /* Slightly darker blue on hover */
+}
+
+.header-login-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0178BA; /* Instagram-inspired blue */
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Hover effect for .header-login-button */
+.header-login-button:hover {
+    background-color: #005f8f; /* Darker blue on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+
+/* Profile Container */
+.header-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjust spacing for alignment */
+    margin-left: auto;
+    position: relative;
+}
+
+
+
+/* Profile Container */
+.header-profile-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    position: relative;
+}
+
+/* Profile Circle */
+.header-profile-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #0576BA;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.header-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.header-menu-item {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.header-divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 5px 0;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header-logo-image {
+        height: 32px;
+    }
+
+    .header-slogan {
+        display: none;
+    }
+
+    .header-profile-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    /* Show hamburger menu in mobile */
+    .header-hamburger-menu {
+        display: flex;
+    }
+
+    /* Mobile navigation menu */
+    .header-dashboard-left-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        z-index: 9;
+        animation: slide-down 0.3s ease-in-out;
+    }
+
+    .header-dashboard-left-nav.nav-open {
+        display: flex;
+    }
+
+    .header-dashboard-left-nav-nav-link {
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #0178BA;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .header-dashboard-left-nav-nav-link:hover {
+        background-color: #f0f0f0;
+    }
+
+    .header-logo-slogan-container {
+        padding-left: 50px;
+    }
+}
+
+/* Slide-down animation for the mobile menu */
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

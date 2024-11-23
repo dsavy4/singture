@@ -1,0 +1,144 @@
+/* Main Container */
+.orders-buyer-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+/* Filter Container Styling */
+.orders-buyer-filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Item Styling - Removed Button Appearance */
+.orders-buyer-filter-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: none;
+}
+
+.orders-buyer-filter-item.selected {
+    background-color: #e0f7ff;
+    color: #0178BA;
+}
+
+/* Filter Item Label Styling */
+.orders-buyer-filter-label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.orders-buyer-filter-count {
+    font-size: 24px;
+    color: #0178BA;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.orders-buyer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-buyer-table th,
+.orders-buyer-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-buyer-table th {
+    background-color: #fafafa;
+    font-weight: bold;
+}
+
+.orders-buyer-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* View Button Styling */
+.orders-buyer-view-button {
+    color: #0178BA;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.orders-buyer-view-button:hover {
+    color: #0056b3;
+}
+
+/* Back Button Styling */
+.orders-buyer-back-button {
+    display: flex;
+    align-items: center;
+    color: #0178BA;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.orders-buyer-back-button:hover {
+    color: #0056b3;
+}
+
+.orders-buyer-back-button svg {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Filter container adjusts layout */
+    .orders-buyer-filter-container {
+        flex-direction: row;  /* Keep items in a row */
+        gap: 10px;  /* Space between items */
+        overflow-x: auto;  /* Allow scrolling if items overflow */
+    }
+
+    .orders-buyer-filter-item {
+        flex: none;  /* Prevent stretching to full width */
+        width: auto;  /* Allow item width to adjust */
+    }
+
+    /* Make the table scrollable horizontally */
+    .orders-buyer-table-container {
+        overflow-x: auto;  /* Horizontal scroll for table */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+
+    .orders-buyer-table {
+        width: auto;  /* Allow table to shrink and expand */
+        min-width: 600px;  /* Set a minimum width to avoid too much shrinking */
+    }
+
+    /* Adjust table header font size on small screens */
+    .orders-buyer-table th, .orders-buyer-table td {
+        font-size: 12px;
+    }
+
+    /* Adjust button styles for mobile */
+    .orders-buyer-view-button {
+        font-size: 12px; /* Smaller button text */
+    }
+}

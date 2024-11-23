@@ -1,0 +1,133 @@
+/* Footer Container */
+.footer {
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color for contrast */
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
+}
+
+/* Content inside Footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px; /* Add spacing between the columns */
+}
+
+/* Logo Section */
+.footer-logo {
+    display: flex;
+    flex-direction: column; /* Stack logo and text vertically */
+    align-items: center; /* Center align the logo and text */
+    flex: 1;
+    min-width: 250px;
+    text-align: center; /* Center the text */
+}
+
+.footer-logo .logo-img {
+    width: 100px; /* Adjust the logo size */
+    margin-bottom: 10px;
+}
+
+/* Links Section */
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Title for Links and Social */
+.footer-links h4, .footer-social h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #0178BA; /* Instagram blue */
+}
+
+/* Footer Links Styling */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links li a {
+    color: #333333; /* Dark text for links */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links li a:hover {
+    color: #0178BA; /* Instagram blue on hover */
+}
+
+/* Social Media Icons Section */
+.footer-social .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-social .social-icons a {
+    color: #0178BA; /* Instagram blue */
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    color: #6897b1; /* Darker blue on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999999; /* Lighter text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Reduce gap between columns on smaller screens */
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links, .footer-social {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .footer-social .social-icons a {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links ul {
+        padding: 0;
+    }
+
+    .footer-links li a {
+        font-size: 14px;
+    }
+
+    .footer-social .social-icons a {
+        font-size: 24px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

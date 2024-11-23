@@ -1,0 +1,142 @@
+/* Ensure the container uses full height of the screen */
+.orders-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+/* Style the left sidebar for Singer */
+.orders-left-nav {
+    width: 185px;
+    background-color: #f7f7f7;
+    padding-top: 16px;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+}
+
+/* Main content area for Singer orders */
+.orders-content {
+    flex-grow: 1;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Singer orders specific section styling */
+.orders-singer-section {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Orders table styling */
+.orders-singer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-singer-table th,
+.orders-singer-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-singer-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Hover effect for table rows */
+.orders-singer-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button to accept the request */
+.orders-accept-button {
+    padding: 8px 16px;
+    background-color: #0178BA; /* Match Profile Color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover effect */
+.orders-accept-button:hover {
+    background-color: #0056b3;
+}
+
+/* Load more button */
+.orders-load-more {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #E0E0E0;
+    color: #333;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for load more button */
+.orders-load-more:hover {
+    background-color: #FF5500;
+    color: white;
+}
+
+/* Mobile view adjustments for orders-singer */
+@media (max-width: 768px) {
+    /* Stack sidebar and content vertically on mobile */
+    .orders-container {
+        flex-direction: row;
+    }
+
+    /* Sidebar takes full width on mobile */
+    .orders-left-nav {
+        width: 100%;
+        border-right: none;
+        height: auto;
+        position: relative;
+    }
+
+    /* Content takes full width and no left border on mobile */
+    .orders-content {
+        width: 100%;
+        border-left: none;
+        padding: 15px;
+    }
+
+    /* Adjust the table for mobile */
+    .orders-singer-table th,
+    .orders-singer-table td {
+        padding: 10px;
+    }
+
+    /* Adjust the toggle container for mobile */
+    .orders-toggle-container {
+        flex-direction: column;
+    }
+
+    /* Adjust the toggle button styles for mobile */
+    .orders-toggle-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure content does not get pushed below sidebar */
+    .orders-content {
+        margin-top: 20px; /* Give some space for content */
+    }
+
+    /* Sidebar doesn't overlap the content */
+    .orders-left-nav {
+        position: static; /* Remove sticky positioning on small screens */
+    }
+}

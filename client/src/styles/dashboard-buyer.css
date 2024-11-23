@@ -1,0 +1,109 @@
+/* Styling for the orders buyer page */
+.orders-buyer-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Filter Section */
+.orders-filter {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.orders-filter-sections {
+    display: flex;
+    gap: 10px;
+}
+
+.orders-filter-section {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.orders-filter-section:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.orders-filter-title {
+    font-weight: bold;
+}
+
+.orders-filter-count {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Table styling for song requests */
+.orders-buyer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-buyer-table th,
+.orders-buyer-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-buyer-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Hover effect for table rows */
+.orders-buyer-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the expand arrow icon */
+.orders-expand-arrow {
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Expanded details row */
+.orders-expanded-details {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+}
+
+/* Load more button */
+.orders-load-more {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #E0E0E0;
+    color: #333;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for load more button */
+.orders-load-more:hover {
+    background-color: #FF5500;
+    color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .orders-buyer-table th,
+    .orders-buyer-table td {
+        padding: 8px;
+    }
+
+    .orders-filter-sections {
+        flex-direction: column;
+    }
+}

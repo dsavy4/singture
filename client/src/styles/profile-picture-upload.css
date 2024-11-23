@@ -1,0 +1,59 @@
+/* profile-picture-upload.css */
+
+/* Container for the upload area */
+.profile-picture-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container for the profile picture placeholder and image */
+.profile-picture-upload-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-picture-upload-container:hover {
+    background-color: #eef2f7;
+}
+
+/* Style for the profile image */
+.profile-picture-upload-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Placeholder text */
+.profile-picture-upload-placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Footer with the upload prompt */
+.profile-picture-upload-footer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.profile-picture-upload-footer a {
+    color: #0178ba;
+    text-decoration: none;
+}
+
+.profile-picture-upload-footer a:hover {
+    text-decoration: underline;
+}

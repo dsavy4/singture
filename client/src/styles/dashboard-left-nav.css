@@ -1,0 +1,135 @@
+.dashboard-left-nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px; /* Default width for larger screens */
+    background-color: #fff;
+    height: 100vh;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* The mobile view class - controls sidebar width on smaller screens */
+.dashboard-left-nav-container.mobile-view {
+    width: 70px; /* Adjust the width for mobile view */
+    padding: 10px 5px; /* Reduced padding */
+    margin: 0; /* Ensure the sidebar stays left-aligned */
+}
+
+/* Flexbox for side-by-side buttons */
+.dashboard-left-nav-button-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styling for individual buttons */
+.dashboard-left-nav-buyer-button,
+.dashboard-left-nav-singer-button {
+    background: none;
+    border: 2px solid #ddd;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 15px; /* Adjust as needed for more or less rounding */
+    width: 48%;
+}
+
+/* Active button styles */
+.dashboard-left-nav-buyer-button.active,
+.dashboard-left-nav-singer-button.active {
+    background-color: #0178BA;
+    color: white;
+    border-color: #0178BA;
+}
+
+/* Hide labels on buttons and links in mobile view */
+.button-label {
+    font-size: 12px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Navigation Links */
+.dashboard-left-nav-nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dashboard-left-nav-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dashboard-left-nav-nav-link i {
+    margin-right: 10px;
+}
+
+.dashboard-left-nav-nav-link:hover {
+    color: #0073e6;
+    background-color: #f1f1f1;
+}
+
+/* Section Titles */
+.dashboard-left-nav-section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+/* Responsive design for mobile menu */
+@media (max-width: 768px) {
+    /* Specific adjustments for mobile view */
+    .dashboard-left-nav-container.mobile-view {
+        width: 70px; /* Adjust width for mobile view */
+        padding: 10px 5px; /* Reduced padding for smaller space */
+    }
+
+    /* Hide labels on buttons and links in mobile view */
+    .button-label {
+        display: none;
+    }
+
+    .dashboard-left-nav-nav-link {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .dashboard-left-nav-nav-link i {
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    .dashboard-left-nav-button-toggle-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .dashboard-left-nav-buyer-button,
+    .dashboard-left-nav-singer-button {
+        padding: 8px;
+        width: 100%;
+    }
+}

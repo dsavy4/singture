@@ -1,0 +1,191 @@
+/* Header Section Styling */
+.song-request-header {
+    background-image: url('../assets/images/song_request.jpg');
+    background-size: cover; /* Ensures the image covers the entire header */
+    background-position: center; /* Centers the image */
+    height: 350px; /* Default height for larger screens */
+    position: relative;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    left: 50%; /* Align to the center */
+    right: 50%; /* Align to the center */
+    transform: translateX(-50%); /* Adjust positioning to ensure full width */
+}
+
+/* Responsive Background */
+@media (max-width: 768px) {
+    .song-request-header {
+        background-position: center top; /* Centers the image at the top for mobile */
+        height: 300px; /* Adjusted height for mobile */
+        padding: 0; /* Removes padding for better fit */
+        margin: 0; /* Ensure no extra margin */
+        left: 50%; /* Align to the center */
+        right: 50%; /* Align to the center */
+        transform: translateX(-50%); /* Adjust positioning to ensure full width */
+    }
+}
+
+/* Header Overlay */
+.header-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Padding for the overlay */
+    text-align: center;
+}
+
+/* Header Title Styling */
+.header-overlay h1 {
+    font-size: 2rem; /* Default size for larger screens */
+    margin: 0;
+    padding: 0;
+    color: #FF7700; /* Color for the title */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+}
+
+/* Header Paragraph Styling */
+.header-overlay p {
+    font-size: 1rem; /* Default size for larger screens */
+    margin: 10px 0;
+    max-width: 600px;
+    color: #fff; /* Text color for better readability */
+}
+
+/* "Start Your Request" Button Styling */
+.song-request-start-button {
+    background-color: #FF7700; /* Button background color */
+    color: white; /* Button text color */
+    padding: 12px 24px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.song-request-start-button:hover {
+    background-color: #FF5500; /* Darker color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Song Request Form Container */
+.song-request-container {
+    max-width: 600px; /* Max width for the form */
+    margin: 20px auto; /* Centering the form */
+    padding: 20px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* Form background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form Title */
+.song-request-title {
+    font-size: 24px; /* Title font size */
+    color: #333; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center text */
+}
+
+/* Input Fields Styling */
+.song-request-input,
+.song-request-textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px; /* Space above */
+    font-size: 1rem; /* Font size */
+}
+
+.song-request-input:focus,
+.song-request-textarea:focus {
+    border-color: #FF7700; /* Border color on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Spacing for Helper Text */
+.song-request-small {
+    font-size: 0.85rem; /* Smaller font for helper text */
+    color: #666; /* Helper text color */
+    margin-top: -5px; /* Negative margin for overlap */
+    margin-bottom: 15px; /* Space below */
+}
+
+/* Genre Buttons */
+.song-request-genre-button {
+    padding: 10px 15px; /* Padding */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 8px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.song-request-genre-button.active {
+    background-color: #FF7700; /* Active button color */
+    color: white; /* Text color when active */
+}
+
+.song-request-genre-button:hover:not(.active) {
+    background-color: #f0f0f0; /* Hover color for inactive buttons */
+}
+
+/* Submit and Cancel Buttons */
+.song-request-button {
+    background-color: #FF7700; /* Submit button color */
+    color: white; /* Submit button text color */
+    padding: 12px; /* Padding */
+    border-radius: 25px; /* Rounded corners */
+    width: 100%; /* Full width */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-bottom: 10px; /* Space below submit button */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.song-request-button:hover {
+    background-color: #FF5500; /* Darker color on hover */
+}
+
+.song-request-cancel-button {
+    background-color: transparent; /* Transparent background */
+    color: #FF7700; /* Text color */
+    font-size: 1rem; /* Font size */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Space above */
+    font-weight: bold; /* Bold text */
+}
+
+.song-request-cancel-button:hover {
+    color: #FF5500; /* Darker color on hover */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red; /* Error text color */
+    font-size: 0.9rem; /* Font size */
+    margin-bottom: 15px; /* Space below */
+    text-align: center; /* Center text */
+}
