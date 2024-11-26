@@ -1,0 +1,128 @@
+/* video-list.css */
+.video-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Larger items with fewer columns */
+  gap: 30px;  /* Increase gap for better spacing */
+  padding: 20px;
+}
+
+.video-list-item {
+  background-color: #fff;
+  border-radius: 12px;  /* More rounded corners for modern design */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Larger shadow for depth */
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transitions for hover effects */
+}
+
+.video-list-item:hover {
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Stronger shadow on hover */
+}
+
+.video-list-thumbnail-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-list-thumbnail {
+  width: 100%;
+  height: 180px;  /* Larger thumbnail size */
+  object-fit: cover;
+  border-bottom: 2px solid #f1f1f1;
+  transition: transform 0.3s ease;  /* Thumbnail smooth transition */
+}
+
+.video-list-item:hover .video-list-thumbnail {
+  transform: scale(1.1);  /* Slight zoom on hover */
+}
+
+.video-list-title {
+  font-size: 16px;  /* Set an appropriate font size */
+  font-weight: bold;  /* Bold for the title */
+  color: #000;  /* Adjust the color to match YouTube's style */
+  margin: 10px 0;  /* Add margin to space the title from the image */
+  line-height: 1.3;  /* Slightly increased line-height for better readability */
+  white-space: normal;  /* Allow text to wrap instead of being cut off */
+  overflow: hidden;  /* Hide overflow to avoid text spilling outside */
+  text-overflow: ellipsis;  /* Use ellipsis to truncate text when it's too long */
+  max-height: 3.9em;  /* Limit the height to a specific number of lines (adjust as needed) */
+}
+
+
+.video-list-loading {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #555;
+}
+
+/* Modal Styles */
+.video-list-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;  /* Fade-in effect */
+}
+
+.video-list-modal-content {
+  position: relative;
+  background-color: #000;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: hidden;
+  border-radius: 12px;  /* Rounded corners for modern look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.video-list-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.video-list-close-btn:hover {
+  background-color: #d00000;
+}
+
+@media (max-width: 768px) {
+  .video-list-title {
+    font-size: 16px;  /* Adjust title size for medium screens */
+  }
+
+  .video-list-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));  /* More compact grid on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-list-thumbnail {
+    height: 160px;  /* Adjust thumbnail size for small screens */
+  }
+
+  .video-list-title {
+    font-size: 14px;  /* Smaller title font size */
+  }
+}

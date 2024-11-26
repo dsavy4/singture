@@ -129,7 +129,7 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-section profile-role">
-                    <label>Role</label>
+                    <label>Preferred Role</label>
                     <div className="profile-role-buttons">
                         <button
                             className={`profile-role-buttons buyer-button ${userPreferences.role === USER_ROLES.BUYER ? 'active' : ''}`}
@@ -149,7 +149,7 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-section profile-genres">
-                    <label>Genres:</label>
+                    <label>Genres (Select one or more)</label>
                     <div style={{ display: 'flex', gap: '10px' }}>
                         {['Pop', 'Rock', 'Jazz', 'Hip-Hop', 'R&B', 'Country', 'EDM'].map((g) => (
                             <button
@@ -165,7 +165,7 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-section profile-experience">
-                    <label>Experience:</label>
+                    <label>Experience</label>
                     <div style={{ display: 'flex', gap: '10px' }}>
                         {['I\'m New', '1-2 Years', '3-5 Years', '5+ Years', 'Professional Experience'].map((exp) => (
                             <button
@@ -181,7 +181,7 @@ const Profile = () => {
                 </div>
 
                 <div className="profile-section profile-bio">
-                    <label htmlFor="bio">Bio</label>
+                    <label htmlFor="bio">Tell us about yourself</label>
                     <textarea
                         id="bio"
                         name="bio"

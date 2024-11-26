@@ -66,6 +66,13 @@
     width: 100%;
 }
 
+/* Active Link Styles */
+.dashboard-left-nav-nav-link.dashboard-left-nav-nav-link-active {
+    background-color: #eaf6ff;
+    color: #0178BA;
+    border-radius: 15px; /* Adjust as needed for more or less rounding */
+}
+
 .dashboard-left-nav-nav-link {
     display: flex;
     align-items: center;

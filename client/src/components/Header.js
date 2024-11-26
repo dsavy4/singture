@@ -105,7 +105,7 @@ const Header = () => {
                         {dropdownOpen && (
                             <div className="header-dropdown-menu">
                                 <Link to="/dashboard" className="header-menu-item" onClick={closeMenus}>Dashboard</Link>
-                                <Link to="/refer-a-friend" className="header-menu-item" onClick={closeMenus}>Refer a Friend</Link>
+                                <Link to="/referral" className="header-menu-item" onClick={closeMenus}>Refer a Friend</Link>
                                 <div className="header-divider"></div>
                                 <span className="header-menu-item" onClick={handleLogout}>Log Out</span>
                             </div>

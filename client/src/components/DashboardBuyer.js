@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { getSongRequests } from '../services/songService';
-import '../styles/orders-buyer.css';
+import '../styles/dashboard-buyer.css';
 import { FaArrowLeft } from 'react-icons/fa';
 
-const OrdersBuyer = () => {
+const DashboardBuyer = () => {
     const { userInfo } = useAuth();
     const [songRequests, setSongRequests] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -77,10 +77,10 @@ const OrdersBuyer = () => {
     };
 
     return (
-        <div className="orders-buyer-container">
+        <div className="dashboard-buyer-container">
             {showDetails ? (
-                <div className="orders-buyer-details">
-                    <div className="orders-buyer-back-button" onClick={handleBack}>
+                <div className="dashboard-buyer-details">
+                    <div className="dashboard-buyer-back-button" onClick={handleBack}>
                         <FaArrowLeft /> Back to List
                     </div>
                     <h2>Request Details</h2>
@@ -94,24 +94,24 @@ const OrdersBuyer = () => {
             ) : (
                 <div>
                     {/* Filter container should always show allCounts */}
-                    <div className="orders-buyer-filter-container">
+                    <div className="dashboard-buyer-filter-container">
                         {Object.keys(allCounts).map((status) => (
                             <div
                                 key={status}
-                                className={`orders-buyer-filter-item ${selectedStatus === status ? 'selected' : ''}`}
+                                className={`dashboard-buyer-filter-item ${selectedStatus === status ? 'selected' : ''}`}
                                 onClick={() => {
                                     setSelectedStatus(status);
                                     setPage(1);  // Reset to page 1 when status changes
                                 }}
                             >
-                                <span className="orders-buyer-filter-label">{status}</span>
-                                <span className="orders-buyer-filter-count">{allCounts[status]}</span>
+                                <span className="dashboard-buyer-filter-label">{status}</span>
+                                <span className="dashboard-buyer-filter-count">{allCounts[status]}</span>
                             </div>
                         ))}
                     </div>
 
                     {/* Table to display requests */}
-                    <table className="orders-buyer-table">
+                    <table className="dashboard-buyer-table">
                         <thead>
                             <tr>
                                 <th>Recipient</th>
@@ -126,7 +126,7 @@ const OrdersBuyer = () => {
                                     <td>{request.specialRequests?.substring(0, 100)}...</td>
                                     <td>
                                         <span
-                                            className="orders-buyer-view-button"
+                                            className="dashboard-buyer-view-button"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 handleShowDetails(request);
@@ -148,4 +148,4 @@ const OrdersBuyer = () => {
     );
 };
 
-export default OrdersBuyer;
+export default DashboardBuyer;

@@ -1,9 +1,9 @@
 /* Header Section Styling */
 .song-request-header {
     background-image: url('../assets/images/song_request.jpg');
-    background-size: cover; /* Ensures the image covers the entire header */
-    background-position: center; /* Centers the image */
-    height: 350px; /* Default height for larger screens */
+    background-size: cover;
+    background-position: center;
+    height: 350px;
     position: relative;
     color: #fff;
     text-align: center;
@@ -12,30 +12,17 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width: 100vw; /* Full viewport width */
-    margin: 0; /* Remove any default margins */
-    padding: 0; /* Remove any default padding */
-    left: 50%; /* Align to the center */
-    right: 50%; /* Align to the center */
-    transform: translateX(-50%); /* Adjust positioning to ensure full width */
-}
-
-/* Responsive Background */
-@media (max-width: 768px) {
-    .song-request-header {
-        background-position: center top; /* Centers the image at the top for mobile */
-        height: 300px; /* Adjusted height for mobile */
-        padding: 0; /* Removes padding for better fit */
-        margin: 0; /* Ensure no extra margin */
-        left: 50%; /* Align to the center */
-        right: 50%; /* Align to the center */
-        transform: translateX(-50%); /* Adjust positioning to ensure full width */
-    }
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
 }
 
 /* Header Overlay */
 .header-overlay {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
     left: 0;
@@ -45,147 +32,158 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Padding for the overlay */
+    padding: 20px;
     text-align: center;
 }
 
 /* Header Title Styling */
 .header-overlay h1 {
-    font-size: 2rem; /* Default size for larger screens */
+    font-family: 'Montserrat', sans-serif; /* Instagram-like font for titles */
+    font-weight: 600;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
-    color: #FF7700; /* Color for the title */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 /* Header Paragraph Styling */
 .header-overlay p {
-    font-size: 1rem; /* Default size for larger screens */
+    font-family: 'Roboto', sans-serif; /* Lighter font for body text */
+    font-size: 1rem;
     margin: 10px 0;
     max-width: 600px;
-    color: #fff; /* Text color for better readability */
+    color: #fff;
 }
 
 /* "Start Your Request" Button Styling */
 .song-request-start-button {
-    background-color: #FF7700; /* Button background color */
-    color: white; /* Button text color */
-    padding: 12px 24px; /* Button padding */
-    border: none; /* No border */
-    border-radius: 25px; /* Rounded corners */
-    font-size: 1rem; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 15px; /* Space above the button */
-    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif; /* Font for buttons */
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .song-request-start-button:hover {
-    background-color: #FF5500; /* Darker color on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 /* Song Request Form Container */
 .song-request-container {
-    max-width: 600px; /* Max width for the form */
-    margin: 20px auto; /* Centering the form */
-    padding: 20px; /* Padding */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #fff; /* Form background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Title */
 .song-request-title {
-    font-size: 24px; /* Title font size */
-    color: #333; /* Title color */
-    margin-bottom: 20px; /* Space below the title */
-    text-align: center; /* Center text */
+    font-family: 'Montserrat', sans-serif; /* Font for form titles */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Input Fields Styling */
 .song-request-input,
 .song-request-textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Padding */
-    border: 1px solid #ddd; /* Border */
-    border-radius: 5px; /* Rounded corners */
-    margin-top: 5px; /* Space above */
-    font-size: 1rem; /* Font size */
+    font-family: 'Roboto', sans-serif; /* Font for input fields */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 1rem;
 }
 
 .song-request-input:focus,
 .song-request-textarea:focus {
-    border-color: #FF7700; /* Border color on focus */
-    outline: none; /* Remove outline */
+    border-color: #007BFF;
+    outline: none;
 }
 
 /* Spacing for Helper Text */
 .song-request-small {
-    font-size: 0.85rem; /* Smaller font for helper text */
-    color: #666; /* Helper text color */
-    margin-top: -5px; /* Negative margin for overlap */
-    margin-bottom: 15px; /* Space below */
+    font-family: 'Roboto', sans-serif; /* Font for helper text */
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: -5px;
+    margin-bottom: 15px;
 }
 
 /* Genre Buttons */
 .song-request-genre-button {
-    padding: 10px 15px; /* Padding */
-    border: 1px solid #ddd; /* Border */
-    border-radius: 20px; /* Rounded corners */
-    margin-right: 8px; /* Space between buttons */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .song-request-genre-button.active {
-    background-color: #FF7700; /* Active button color */
-    color: white; /* Text color when active */
+    background-color: #007BFF;
+    color: white;
 }
 
 .song-request-genre-button:hover:not(.active) {
-    background-color: #f0f0f0; /* Hover color for inactive buttons */
+    background-color: #f0f0f0;
 }
 
 /* Submit and Cancel Buttons */
 .song-request-button {
-    background-color: #FF7700; /* Submit button color */
-    color: white; /* Submit button text color */
-    padding: 12px; /* Padding */
-    border-radius: 25px; /* Rounded corners */
-    width: 100%; /* Full width */
-    font-size: 1rem; /* Font size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    margin-bottom: 10px; /* Space below submit button */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-family: 'Roboto', sans-serif;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .song-request-button:hover {
-    background-color: #FF5500; /* Darker color on hover */
+    background-color: #0056b3;
 }
 
 .song-request-cancel-button {
-    background-color: transparent; /* Transparent background */
-    color: #FF7700; /* Text color */
-    font-size: 1rem; /* Font size */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor */
-    text-align: center; /* Center text */
-    width: 100%; /* Full width */
-    margin-top: 10px; /* Space above */
-    font-weight: bold; /* Bold text */
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    color: #007BFF;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .song-request-cancel-button:hover {
-    color: #FF5500; /* Darker color on hover */
+    color: #0056b3;
 }
 
 /* Error Message Styling */
 .error-message {
-    color: red; /* Error text color */
-    font-size: 0.9rem; /* Font size */
-    margin-bottom: 15px; /* Space below */
-    text-align: center; /* Center text */
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
 }

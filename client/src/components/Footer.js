@@ -40,6 +40,10 @@ const Footer = () => {
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin-in"></i>
                         </a>
+                        {/* YouTube Link */}
+                        <a href="https://www.youtube.com/@singture/videos" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -48,7 +52,6 @@ const Footer = () => {
                 <p>&copy; {new Date().getFullYear()} Singture. All rights reserved.</p>
             </div>
         </footer>
-
     );
 };
 

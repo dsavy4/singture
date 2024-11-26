@@ -1,109 +1,144 @@
-/* Styling for the orders buyer page */
-.orders-buyer-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Filter Section */
-.orders-filter {
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.orders-filter-sections {
+/* Main Container */
+.dashboard-buyer-container {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #FFFFFF;
 }
 
-.orders-filter-section {
-    padding: 10px;
-    background-color: #f0f0f0;
+/* Filter Container Styling */
+.dashboard-buyer-filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Item Styling - Removed Button Appearance */
+.dashboard-buyer-filter-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    text-align: center;
-    flex-grow: 1;
+    transition: background-color 0.3s ease;
+    box-shadow: none;
 }
 
-.orders-filter-section:hover {
-    background-color: #007bff;
-    color: white;
+.dashboard-buyer-filter-item.selected {
+    background-color: #e0f7ff;
+    color: #0178BA;
 }
 
-.orders-filter-title {
+/* Filter Item Label Styling */
+.dashboard-buyer-filter-label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.dashboard-buyer-filter-count {
+    font-size: 24px;
+    color: #0178BA;
     font-weight: bold;
 }
 
-.orders-filter-count {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Table styling for song requests */
-.orders-buyer-table {
+/* Table Styling */
+.dashboard-buyer-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.orders-buyer-table th,
-.orders-buyer-table td {
+.dashboard-buyer-table th,
+.dashboard-buyer-table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.orders-buyer-table th {
-    background-color: #f0f0f0;
+.dashboard-buyer-table th {
+    background-color: #fafafa;
     font-weight: bold;
 }
 
-/* Hover effect for table rows */
-.orders-buyer-table tr:hover {
+.dashboard-buyer-table tr:hover {
     background-color: #f1f1f1;
+    cursor: pointer;
 }
 
-/* Styling for the expand arrow icon */
-.orders-expand-arrow {
+/* View Button Styling */
+.dashboard-buyer-view-button {
+    color: #0178BA;
     cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.dashboard-buyer-view-button:hover {
+    color: #0056b3;
+}
+
+/* Back Button Styling */
+.dashboard-buyer-back-button {
+    display: flex;
+    align-items: center;
+    color: #0178BA;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.dashboard-buyer-back-button:hover {
+    color: #0056b3;
+}
+
+.dashboard-buyer-back-button svg {
+    margin-right: 5px;
     font-size: 18px;
-    color: #007bff;
 }
 
-/* Expanded details row */
-.orders-expanded-details {
-    padding: 10px;
-    background-color: #f7f7f7;
-    border-top: 1px solid #ddd;
-}
-
-/* Load more button */
-.orders-load-more {
-    margin-top: 20px;
-    padding: 12px 20px;
-    background-color: #E0E0E0;
-    color: #333;
-    border-radius: 25px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-/* Hover effect for load more button */
-.orders-load-more:hover {
-    background-color: #FF5500;
-    color: white;
-}
-
-/* Mobile responsiveness */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
-    .orders-buyer-table th,
-    .orders-buyer-table td {
-        padding: 8px;
+    /* Filter container adjusts layout */
+    .dashboard-buyer-filter-container {
+        flex-direction: row;  /* Keep items in a row */
+        gap: 10px;  /* Space between items */
+        overflow-x: auto;  /* Allow scrolling if items overflow */
     }
 
-    .orders-filter-sections {
-        flex-direction: column;
+    .dashboard-buyer-filter-item {
+        flex: none;  /* Prevent stretching to full width */
+        width: auto;  /* Allow item width to adjust */
+    }
+
+    /* Make the table scrollable horizontally */
+    .dashboard-buyer-table-container {
+        overflow-x: auto;  /* Horizontal scroll for table */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+
+    .dashboard-buyer-table {
+        width: auto;  /* Allow table to shrink and expand */
+        min-width: 600px;  /* Set a minimum width to avoid too much shrinking */
+    }
+
+    /* Adjust table header font size on small screens */
+    .dashboard-buyer-table th, .dashboard-buyer-table td {
+        font-size: 12px;
+    }
+
+    /* Adjust button styles for mobile */
+    .dashboard-buyer-view-button {
+        font-size: 12px; /* Smaller button text */
     }
 }

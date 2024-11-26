@@ -14,11 +14,11 @@ const songRequestSchema = new mongoose.Schema({
     },
     songTitle: {
         type: String,
-        required: false, // Change to false to make it optional
+        required: false, 
     },
     artist: {
         type: String,
-        required: false, // Change to false to make it optional
+        required: false,
     },
     recipientName: {
         type: String,
@@ -43,12 +43,22 @@ const songRequestSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    expirationTime: {  // Tracks when the request expires if not funded
+        type: Date,
+        required: true,
+    },
+    paymentStatus: {
+        type: String,
+        enum: ['NotFunded', 'Reserved', 'Released', 'Refunded'],
+        default: 'NotFunded', // Default is NotFunded, meaning payment has not been made yet
+    },
     status: {
         type: String,
         default: 'Pending',
         maxlength: 100,
     },
 });
+
 
 // Indexes for faster querying
 songRequestSchema.index({ userId: 1 });

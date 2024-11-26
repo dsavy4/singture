@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import BuyerDashboard from './BuyerDashboard';
-import SingerDashboard from './SingerDashboard';
+import DashboardSinger from './DashboardSinger';
+import DashboardBuyer from './DashboardBuyer';
 import DashboardLeftNav from './DashboardLeftNav';
 import { USER_ROLES } from '../constants/userRoles';
 import '../styles/dashboard.css'; 
@@ -30,7 +30,7 @@ const Dashboard = () => {
                     <div className="dashboard-user-info">
                         <h2 className="dashboard-welcome-message">Welcome, {userInfo?.profile?.name || 'User'}!</h2>
                         {/* Render Buyer or Singer dashboard based on userRole */}
-                        {userInfo?.profile?.role === USER_ROLES.BUYER ? <BuyerDashboard /> : <SingerDashboard />}
+                        {userInfo?.profile?.role === USER_ROLES.BUYER ? <DashboardBuyer /> : <DashboardSinger />}
                     </div>
                 ) : (
                     <h2>Please log in to access your dashboard.</h2>

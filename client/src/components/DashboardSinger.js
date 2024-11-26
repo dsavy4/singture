@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext'; 
 import { getSongRequests } from '../services/songService';
 import { USER_ROLES } from '../constants/userRoles';
-import '../styles/orders-singer.css';
+import '../styles/dashboard-singer.css';
 
-const OrdersSinger = () => {
+const DashboardSinger = () => {
     const { userInfo } = useAuth();
     const [songRequests, setSongRequests] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -41,9 +41,9 @@ const OrdersSinger = () => {
     }, [page, userInfo?.token, userInfo?.profile?.id]);
 
     return (
-        <div className="orders-singer-section">
+        <div className="dashboard-singer-section">
             <h2>Your Song Requests</h2>
-            <table className="orders-singer-table">
+            <table className="dashboard-singer-table">
                 <thead>
                     <tr>
                         <th>Buyer</th>
@@ -82,4 +82,4 @@ const OrdersSinger = () => {
     );
 };
 
-export default OrdersSinger;
+export default DashboardSinger;

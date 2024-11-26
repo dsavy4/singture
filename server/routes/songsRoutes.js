@@ -8,8 +8,10 @@ const USER_ROLES = require('../constants');  // Import the constants
 
 
 // Route to submit a new song request
+// Route to submit a new song request
 router.post('/song-request', async (req, res) => {
     console.log("post /song-request");
+    
     // Extract the token from the Authorization header
     const token = req.headers['authorization']?.split(' ')[1]; // Assuming the format "Bearer <token>"
     if (!token) {
@@ -28,7 +30,7 @@ router.post('/song-request', async (req, res) => {
     const { recipientName, genre, specialRequests, budget, deadline, singerUserId } = req.body;
 
     // Validate input fields
-    if (!recipientName || !genre || !budget || !deadline ) {
+    if (!recipientName || !genre || !budget || !deadline) {
         return res.status(400).json({ success: false, message: 'All fields are required: recipientName, genre, budget, deadline, singerUserId.' });
     }
 
@@ -44,6 +46,10 @@ router.post('/song-request', async (req, res) => {
         return res.status(400).json({ success: false, message: 'Invalid deadline date.' });
     }
 
+    // Set expirationTime (e.g., 48 hours after the request creation)
+    const expirationTime = new Date();
+    expirationTime.setHours(expirationTime.getHours() + 48); // Set to 48 hours later
+
     try {
         // Create a new song request with the provided data
         const newSongRequest = new SongRequest({
@@ -53,6 +59,7 @@ router.post('/song-request', async (req, res) => {
             specialRequests,  // Any special requests (optional)
             budget: budgetValue,  // The budget for the song request
             deadline: deadlineDate, // The deadline for the song request
+            expirationTime,   // Set expiration time (48 hours after request creation)
             ...(singerUserId && { singerUserId }), // Only include singerUserId if it’s defined
         });
 
@@ -66,6 +73,7 @@ router.post('/song-request', async (req, res) => {
         return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
+
 
 router.get('/song-requests', async (req, res) => {
     const { genre, budget, role, status, page = 1, limit = 10 } = req.query;
@@ -92,7 +100,10 @@ router.get('/song-requests', async (req, res) => {
         if (role === USER_ROLES.BUYER) {
             filter.userId = userId;  // For Buyer, filter by userId (Buyer)
         } else if (role === USER_ROLES.SINGER) {
-            filter.singerUserId = userId;  // For Singer, filter by userId (Singer)
+            filter.$or = [
+                { singerUserId: userId },  // Singer's userId
+                { status: 'Pending' }      // Status is Pending
+            ];
         } else {
             return res.status(400).json({
                 success: false,
@@ -143,6 +154,81 @@ router.get('/song-requests', async (req, res) => {
     } catch (error) {
         console.error("Error retrieving song requests:", error);
         return res.status(500).json({ success: false, message: "Internal server error" });
+    }
+});
+
+
+// Summary of Workflow:
+// Singer Accepts: The singer accepts the request and begins working on the song. The status is changed to "In Progress". No payment is released at this point.
+// Buyer Approves: The buyer approves the final song, and the status is changed to "Completed". The payment is released to the singer at this point.
+
+// Route for the singer to accept the song request (before completing the song)
+router.post('/song-request/:id/accept', authenticateJWT, async (req, res) => {
+    const songRequestId = req.params.id;
+    const singerId = req.user.id;
+
+    try {
+        const songRequest = await SongRequest.findById(songRequestId);
+
+        // Ensure the song request is still pending
+        if (songRequest.status !== 'Pending') {
+            return res.status(400).json({ success: false, message: 'This request cannot be accepted.' });
+        }
+
+        // Check if the singer is not the same as the buyer
+        if (songRequest.userId.toString() === singerId.toString()) {
+            return res.status(400).json({ success: false, message: 'You cannot accept your own request.' });
+        }
+
+        // Set the status to 'Accepted' (the singer has accepted the task)
+        songRequest.status = 'In Progress'; // Update status to 'In Progress'
+        songRequest.singerUserId = singerId;
+
+        await songRequest.save();
+
+        return res.status(200).json({ success: true, data: songRequest });
+    } catch (error) {
+        console.error('Error accepting song request:', error);
+        return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+});
+
+// Route for the buyer to approve the song and release payment
+router.post('/song-request/:id/approve', authenticateJWT, async (req, res) => {
+    const songRequestId = req.params.id;
+    const buyerId = req.user.id;
+
+    try {
+        const songRequest = await SongRequest.findById(songRequestId);
+
+        // Ensure the song request exists
+        if (!songRequest) {
+            return res.status(404).json({ success: false, message: 'Song request not found.' });
+        }
+
+        // Ensure the song request is in 'In Progress' status (indicating the singer has delivered the song)
+        if (songRequest.status !== 'In Progress') {
+            return res.status(400).json({ success: false, message: 'This request cannot be approved at this time.' });
+        }
+
+        // Ensure the request belongs to the buyer (the one who created the request)
+        if (songRequest.userId.toString() !== buyerId.toString()) {
+            return res.status(403).json({ success: false, message: 'Only the buyer can approve the song.' });
+        }
+
+        // If the song is approved, set the status to 'Completed' and release the payment
+        songRequest.status = 'Completed';
+        songRequest.paymentStatus = 'Released'; // Payment is now released to the singer
+
+        // You should trigger your payment provider (e.g., Stripe, PayPal) to release funds here
+        // Example: await paymentProvider.releaseFunds(songRequest.userId, songRequest.singerUserId, songRequest.budget);
+
+        await songRequest.save();
+
+        return res.status(200).json({ success: true, message: 'Song approved and payment released.', data: songRequest });
+    } catch (error) {
+        console.error('Error approving song request:', error);
+        return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
 

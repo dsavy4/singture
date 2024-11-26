@@ -1,0 +1,191 @@
+/* Ensure the container uses full height of the screen */
+.feedback-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+/* Style the left sidebar for Feedback */
+.feedback-left-nav {
+    width: 185px;
+    background-color: #f7f7f7;
+    padding-top: 16px;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+}
+
+/* Main content area for Feedback */
+.feedback-content {
+    flex-grow: 1;
+    background-color: #FFFFFF;
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Feedback form styling */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Feedback title */
+.feedback-title {
+    font-size: 24px;
+    color: #0178BA;
+    margin-bottom: 10px;
+}
+
+/* Feedback prompt */
+.feedback-prompt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Feedback rating */
+.feedback-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Increased gap for better spacing */
+}
+
+/* Feedback rating label */
+.feedback-rating-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold; /* Improved readability */
+}
+
+/* Feedback rating star */
+.feedback-rating-star {
+    cursor: pointer;
+    font-size: 30px; /* Increased size for better accessibility */
+    color: #ccc;
+    transition: color 0.3s, transform 0.2s; /* Added scale effect */
+}
+
+/* Feedback rating star active */
+.feedback-rating-star-active {
+    color: #0178BA;
+    transform: scale(1.1); /* Slight zoom-in effect on active */
+}
+
+/* Feedback rating input */
+.feedback-rating-input {
+    display: none;
+}
+
+/* Feedback textarea */
+.feedback-textarea {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Feedback textarea label */
+.feedback-textarea-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Feedback textarea input */
+.feedback-textarea-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 120px; /* Increased height */
+}
+
+/* Feedback submit button */
+.feedback-submit-button {
+    padding: 10px 18px;  /* Reduced padding */
+    background-color: #0178BA;
+    color: white;
+    border: none;
+    border-radius: 20px;  /* Slightly smaller radius */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px;  /* Reduced font size */
+    font-weight: 600;  /* Slightly less bold */
+
+    text-align: center;
+    margin: 0 auto;  /* Automatically centers the button horizontally */
+    display: block;   /* Ensures the button takes up full width for margin auto to work */
+}
+
+/* Feedback submit button hover effect */
+.feedback-submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);  /* Smaller zoom effect */
+}
+
+/* Error message styling */
+.feedback-error {
+    color: #d9534f; /* Bootstrap-like danger color */
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Thank you message */
+.feedback-thank-you {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Feedback message */
+.feedback-message {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+/* Responsive design for feedback */
+@media (max-width: 768px) {
+    .feedback-container {
+        flex-direction: row;
+    }
+
+    .feedback-left-nav {
+        width: 100%;
+        border-right: none;
+        height: auto;
+        position: relative;
+    }
+
+    .feedback-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .feedback-form {
+        gap: 10px;
+    }
+
+    .feedback-rating {
+        flex-wrap: wrap;
+    }
+
+    .feedback-textarea-input {
+        padding: 10px;
+        min-height: 100px; /* Adjusted for smaller screens */
+    }
+
+    .feedback-submit-button {
+        padding: 10px 20px;
+    }
+
+    .feedback-thank-you, .feedback-message {
+        text-align: left;
+    }
+}

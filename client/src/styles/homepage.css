@@ -1,0 +1,19 @@
+/* Homepage.css */
+.homepage {
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .homepage-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .homepage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;  /* Add space between SongRequest and VideoList */
+  }
+  

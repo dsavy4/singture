@@ -32,8 +32,6 @@ const Join = () => {
             setError(validationMessage);
         } else {
             setError(""); // Clear any previous error
-            console.log('Email:', email);
-            console.log('Password:', password);
             // You can navigate to the next step or perform an API call here
         }
     };
